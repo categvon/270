@@ -293,21 +293,23 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* --- Campaign Gallery --- */
+/* --- Campaign Gallery (Refined) --- */
 
 .campaign-gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
 .gallery-item {
-  grid-column: span 6;
+  grid-column: span 5;
+  max-width: 520px;
 }
 
 .gallery-item.wide {
-  grid-column: span 12;
+  grid-column: span 10;
+  max-width: 100%;
 }
 
 .gallery-item img {
@@ -317,33 +319,13 @@ footer {
   border: 2px solid #000;
 }
 
+/* Caption */
 .gallery-item figcaption {
   margin-top: 0.75rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  max-width: 60ch;
 }
 
-/* Responsive behavior */
-@media (max-width: 900px) {
-  .campaign-gallery {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .gallery-item,
-  .gallery-item.wide {
-    grid-column: span 6;
-  }
-}
-
-@media (max-width: 500px) {
-  .campaign-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item,
-  .gallery-item.wide {
-    grid-column: span 1;
-  }
-}
 
 
 
