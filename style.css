@@ -235,3 +235,61 @@ footer {
     row-gap: 0.25rem;
   }
 }
+/* =========================
+   PROJECT GALLERY
+========================= */
+
+#project-gallery {
+  margin-top: 4rem;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+}
+
+.project-gallery a {
+  display: block;
+  border: 3px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery a:hover img,
+.project-gallery a:focus img {
+  transform: scale(1.03);
+}
+
+.project-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE GALLERY
+========================= */
+
+@media (max-width: 900px) {
+  .project-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
