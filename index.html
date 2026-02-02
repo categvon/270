@@ -141,56 +141,76 @@
     <!-- ======================
          Toolkits
          ====================== -->
-<section id="campaign-gallery" class="section">
+<section id="campaign-preview" class="section">
   <h2>Marketing Campaign Assets</h2>
 
   <p>
-    A selection of visual assets from a single marketing campaign, including
-    print, digital, and presentation materials.
+    Hover or focus on an asset to preview it and read a description.
   </p>
 
-  <div class="campaign-gallery">
-    <figure class="gallery-item wide">
+  <div class="preview-gallery">
+    <!-- Preview panel -->
+    <div class="preview-display" aria-live="polite">
       <img
         src="images/banner.png"
-        alt="Wide campaign banner graphic"
+        alt=""
+        id="preview-image"
       />
-      <figcaption>Campaign Banner</figcaption>
-    </figure>
+      <p id="preview-text">
+        Campaign banner used across digital and print placements.
+      </p>
+    </div>
 
-    <figure class="gallery-item">
-      <img
-        src="images/pitchdeck.png"
-        alt="Pitch deck slide design for marketing campaign"
-      />
-      <figcaption>Pitch Deck</figcaption>
-    </figure>
+    <!-- Thumbnails -->
+    <ul class="preview-thumbs">
+      <li>
+        <button
+          data-image="images/banner.png"
+          data-text="Campaign banner used across digital and print placements."
+        >
+          Banner
+        </button>
+      </li>
 
-    <figure class="gallery-item">
-      <img
-        src="images/website.png"
-        alt="Website mockup for marketing campaign"
-      />
-      <figcaption>Campaign Website</figcaption>
-    </figure>
+      <li>
+        <button
+          data-image="images/pitchdeck.png"
+          data-text="Pitch deck slides designed for stakeholder presentations."
+        >
+          Pitch Deck
+        </button>
+      </li>
 
-    <figure class="gallery-item">
-      <img
-        src="images/postcard600.png"
-        alt="Front of marketing postcard"
-      />
-      <figcaption>Postcard (Front)</figcaption>
-    </figure>
+      <li>
+        <button
+          data-image="images/website.png"
+          data-text="Responsive campaign website design."
+        >
+          Website
+        </button>
+      </li>
 
-    <figure class="gallery-item">
-      <img
-        src="images/postcard600f.png"
-        alt="Back of marketing postcard"
-      />
-      <figcaption>Postcard (Back)</figcaption>
-    </figure>
+      <li>
+        <button
+          data-image="images/postcard600.png"
+          data-text="Front of printed campaign postcard."
+        >
+          Postcard (Front)
+        </button>
+      </li>
+
+      <li>
+        <button
+          data-image="images/postcard600f.png"
+          data-text="Back of printed campaign postcard with event details."
+        >
+          Postcard (Back)
+        </button>
+      </li>
+    </ul>
   </div>
 </section>
+
 
 
   <!-- Footer -->
@@ -200,6 +220,7 @@
 
 </body>
 </html>
+
 
 
 
