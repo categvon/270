@@ -292,18 +292,16 @@ footer {
     height: 260px;
   }
 }
-
 /* =========================
    EXPERIENCE IMAGE STRIP (CV ONLY)
-   Does NOT affect campaign gallery
 ========================= */
 
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 0.5rem;               /* tighter spacing */
   margin-top: 0.75rem;
-  max-width: 520px;
+  max-width: 100%;           /* allow near full-width */
 }
 
 .experience-gallery figure {
@@ -312,27 +310,19 @@ footer {
 
 .experience-gallery img {
   width: 100%;
-  height: 90px;
+  height: 140px;             /* larger images */
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #000;
-  background: #fff;
+  border-radius: 6px;        /* subtle softness, optional */
+  background: transparent;
 }
 
-/* Mobile */
+/* Mobile: 2 × 2 grid */
 @media (max-width: 720px) {
   .experience-gallery {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 100%;
   }
 
   .experience-gallery img {
-    height: 100px;
+    height: 160px;
   }
 }
-
-
-
-
-
-
