@@ -182,47 +182,46 @@
     <p>© 2026 Cate G.</p>
   </footer>
 
-  <!-- Lightbox Modal -->
-  <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close image">&times;</button>
-    <img class="lightbox-image" alt="">
-  </div>
+  <!-- Spotlight Backdrop -->
+  <div class="spotlight-backdrop"></div>
 
-  <!-- Lightbox Script -->
+  <!-- Spotlight Script -->
   <script>
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = document.querySelector('.lightbox-image');
-    const closeBtn = document.querySelector('.lightbox-close');
+    const backdrop = document.querySelector('.spotlight-backdrop');
+    let activeImage = null;
 
     document.querySelectorAll('.expandable').forEach(img => {
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.setAttribute('aria-hidden', 'false');
-        closeBtn.focus();
+        if (img.classList.contains('spotlight')) {
+          closeSpotlight();
+          return;
+        }
+        activeImage = img;
+        img.classList.add('spotlight');
+        backdrop.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
     });
 
-    function closeLightbox() {
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '';
+    function closeSpotlight() {
+      if (!activeImage) return;
+      activeImage.classList.remove('spotlight');
+      backdrop.classList.remove('active');
       document.body.style.overflow = '';
+      activeImage = null;
     }
 
-    closeBtn.addEventListener('click', closeLightbox);
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
+    backdrop.addEventListener('click', closeSpotlight);
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') closeSpotlight();
     });
   </script>
 
 </body>
 </html>
+
+
 
 
 
