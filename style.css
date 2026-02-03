@@ -333,25 +333,7 @@ footer {
   pointer-events: all;
 }
 
-/* =========================
-   TOOLKITS / ARCHIVE
-========================= */
-.toolkit-archive {
-  margin-top: 3rem;
-}
 
-.archive-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.archive-item img {
-  max-width: 360px;
-  width: 100%;
-  border: 2px solid #000;
-}
 
 
 
