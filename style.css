@@ -9,7 +9,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -42,7 +43,9 @@ a:focus {
   text-decoration-thickness: 3px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
   line-height: 1.25;
 }
@@ -111,12 +114,13 @@ main {
 }
 
 /* =========================
-   ABOUT
+   INTRO / ABOUT
 ========================= */
 #about {
   display: grid;
   grid-template-columns: 1fr 260px;
   gap: 2rem;
+  align-items: start;
 }
 
 #about img {
@@ -125,7 +129,25 @@ main {
 }
 
 /* =========================
-   RESUME / CV
+   EXPERIENCE / LIST SECTIONS
+========================= */
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section li {
+  margin-bottom: 1.25rem;
+}
+
+section li span {
+  display: inline-block;
+  min-width: 7rem;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   RESUME GRID
 ========================= */
 .resume {
   display: grid;
@@ -155,23 +177,44 @@ main {
   content: "↗";
   font-size: 0.75em;
   margin-left: 0.25em;
+  transition: transform 0.2s ease;
+}
+
+.resume-org:hover::after {
+  transform: translate(3px, -3px);
 }
 
 /* =========================
-   EXPERIENCE IMAGE STRIP
+   FOOTER
 ========================= */
-.experience-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-  margin-top: 0.75rem;
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
 }
 
-.experience-gallery img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 6px;
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .resume-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.25rem;
+  }
 }
 
 /* =========================
@@ -214,183 +257,7 @@ main {
   max-width: 640px;
 }
 
-/* =========================
-   TOOLKITS
-========================= */
-#toolkits {
-  margin-top: 4rem;
-}
-
-.toolkit-item {
-  margin-bottom: 3rem;
-}
-
-.toolkit-title {
-  font-weight: 700;
-}
-
-/* Flyer archive */
-.archive-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.archive-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.archive-item img {
-  max-width: 360px;
-  width: 100%;
-  border: 2px solid #000;
-}
-
-.archive-item figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.8rem;
-  opacity: 0.85;
-}
-
-/* =========================
-   BUTTON TOOLKIT
-========================= */
-.button-demo {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-  flex-wrap: wrap;
-}
-
-.button-demo button {
-  font-family: inherit;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #000;
-  background: #fff;
-}
-
-/* =========================
-   EXPANDABLE / SPOTLIGHT
-========================= */
-.expandable {
-  cursor: zoom-in;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.expandable:hover {
-  transform: scale(1.03);
-}
-
-.expandable.spotlight {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  max-width: 90vw;
-  max-height: 90vh;
-  transform: translate(-50%, -50%);
-  z-index: 1001;
-  cursor: zoom-out;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-
-.spotlight-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-.spotlight-backdrop.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-/* =========================
-   SOU JOANA–STYLE ARCHIVE
-========================= */
-.archive-block {
-  margin-top: 3rem;
-}
-
-.archive-intro {
-  max-width: 60ch;
-}
-
-.archive-hoard {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.archive-asset {
-  display: flex;
-  flex-direction: column;
-}
-
-.archive-asset.narrow { grid-column: span 4; }
-.archive-asset.medium { grid-column: span 5; }
-.archive-asset.wide   { grid-column: span 7; }
-
-.archive-asset img {
-  width: 100%;
-  border: 2px solid #000;
-}
-
-.archive-asset figcaption {
-  margin-top: 0.6rem;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  max-width: 42ch;
-}
-
-.project-note {
-  max-width: 60ch;
-  font-style: italic;
-  margin-top: 1rem;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  margin-top: 4rem;
-  padding: 2rem 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 800px) {
-  #about {
-    grid-template-columns: 1fr;
-  }
-
-  .resume-item {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .archive-hoard {
-    grid-template-columns: 1fr;
-  }
-
-  .archive-asset {
-    grid-column: span 1;
-  }
-
+@media (max-width: 700px) {
   .gallery-item img {
     height: 200px;
   }
@@ -399,178 +266,83 @@ footer {
     height: 260px;
   }
 }
+
 /* =========================
-   CAMPAIGN — STACKED, EDITORIAL
+   CV IMAGE STRIP
 ========================= */
-
-.campaign-gallery {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
-}
-
-/* Stack behavior */
-.campaign-gallery .gallery-item {
-  position: relative;
-  margin-top: -120px; /* overlap */
-}
-
-.campaign-gallery .gallery-item:first-child {
-  margin-top: 0;
-}
-
-/* Image sizing — NORMAL, NOT GIANT */
-.campaign-gallery img {
-  height: 200px;        /* key scale fix */
-  max-width: 520px;
-  width: auto;
-  object-fit: contain;
-  border: 2px solid #000;
-  background: #fff;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-/* Wide assets still slightly larger, but controlled */
-.campaign-gallery .wide img {
-  height: 260px;
-  max-width: 640px;
-}
-
-/* Subtle Joana-style tilt */
-.campaign-gallery .gallery-item:nth-child(1) img {
-  transform: rotate(-2deg);
-}
-.campaign-gallery .gallery-item:nth-child(2) img {
-  transform: rotate(1.5deg);
-}
-.campaign-gallery .gallery-item:nth-child(3) img {
-  transform: rotate(-1deg);
-}
-.campaign-gallery .gallery-item:nth-child(4) img {
-  transform: rotate(2deg);
-}
-.campaign-gallery .gallery-item:nth-child(5) img {
-  transform: rotate(-1.5deg);
-}
-
-/* Captions feel like notes */
-.campaign-gallery figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.75;
-  text-align: center;
-}
-
-/* Mobile — reduce overlap */
-@media (max-width: 700px) {
-  .campaign-gallery .gallery-item {
-    margin-top: -60px;
-  }
-
-  .campaign-gallery img {
-    height: 170px;
-    max-width: 90%;
-  }
-
-  .campaign-gallery .wide img {
-    height: 210px;
-  }
-}
-/* =========================
-   CV EXPERIENCE GALLERY — FINAL OVERRIDE
-========================= */
-
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-/* CRITICAL RESET */
 .experience-gallery img {
   width: 100%;
-  height: auto !important;          /* ← allow natural aspect ratio */
-  max-height: none !important;
-  object-fit: contain !important;   /* ← NO CROPPING */
-  aspect-ratio: auto !important;
-
+  height: 140px;
+  object-fit: cover;
   border-radius: 6px;
-  background: transparent;
-
-  /* kill campaign / archive effects */
-  transform: none !important;
-  box-shadow: none !important;
-  position: static !important;
 }
 
-/* Remove figure weirdness */
-.experience-gallery figure {
-  margin: 0;
+/* =========================
+   EXPANDABLE IMAGES
+========================= */
+.expandable {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
 }
 
-/* Mobile layout */
-@media (max-width: 720px) {
-  .experience-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.expandable:hover {
+  transform: scale(1.03);
 }
 
-/* ==================================================
-   CV EXPERIENCE GALLERY — ABSOLUTE ISOLATION FIX
-   (horizontal, uncropped, spotlight-safe)
-================================================== */
-
-#cv .experience-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-  align-items: start;
-}
-
-/* Reset figure completely */
-#cv .experience-gallery figure {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-/* HARD RESET on CV images */
-#cv .experience-gallery img {
-  width: 100%;
-  height: auto !important;
-  max-height: none !important;
-  min-height: 0 !important;
-
-  object-fit: contain !important;
-  aspect-ratio: auto !important;
-
-  border-radius: 6px;
-  background: transparent;
-
-  /* kill ALL transforms / positioning */
-  transform: none !important;
-  position: static !important;
-  box-shadow: none !important;
-}
-
-/* Spotlight state — keep image natural */
-#cv .experience-gallery img.spotlight {
+/* =========================
+   SPOTLIGHT
+========================= */
+.expandable.spotlight {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 90vw;
   max-height: 90vh;
-  width: auto;
-  height: auto;
+  z-index: 1001;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile */
-@media (max-width: 720px) {
-  #cv .experience-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.spotlight-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
+.spotlight-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =========================
+   TOOLKITS / ARCHIVE
+========================= */
+.toolkit-archive {
+  margin-top: 3rem;
+}
+
+.archive-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.archive-item img {
+  max-width: 360px;
+  width: 100%;
+  border: 2px solid #000;
+}
 
 
 
