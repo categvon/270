@@ -23,7 +23,7 @@ ul {
    GLOBAL STYLES
 ========================= */
 body {
-  background: #ffffe6; /* matches Weebly */
+  background: #ffffe6;
   color: #000;
   font-family: 'Atkinson Hyperlegible', sans-serif;
   font-size: 16px;
@@ -111,13 +111,12 @@ main {
 }
 
 /* =========================
-   INTRO / ABOUT
+   ABOUT
 ========================= */
 #about {
   display: grid;
   grid-template-columns: 1fr 260px;
   gap: 2rem;
-  align-items: start;
 }
 
 #about img {
@@ -126,25 +125,7 @@ main {
 }
 
 /* =========================
-   EXPERIENCE / LIST SECTIONS
-========================= */
-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-section li {
-  margin-bottom: 1.25rem;
-}
-
-section li span {
-  display: inline-block;
-  min-width: 7rem;
-  font-size: 0.9rem;
-}
-
-/* =========================
-   RESUME-LIKE GRID (EXPERIENCE, AWARDS, ETC.)
+   RESUME / CV
 ========================= */
 .resume {
   display: grid;
@@ -170,36 +151,210 @@ section li span {
   font-size: 0.85rem;
 }
 
-/* External link arrow */
 .resume-org::after {
   content: "↗";
   font-size: 0.75em;
   margin-left: 0.25em;
-  transition: transform 0.2s ease;
-}
-
-.resume-org:hover::after {
-  transform: translate(3px, -3px);
 }
 
 /* =========================
-   FEATURED LINKS / CTA BOXES
+   EXPERIENCE IMAGE STRIP
 ========================= */
-section[aria-label="Featured links"] {
-  margin-top: 3rem;
+.experience-gallery {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
-section[aria-label="Featured links"] article {
-  border: 3px solid #000;
-  border-radius: 15px;
-  padding: 1.25rem;
+.experience-gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* =========================
+   PROJECTS / CAMPAIGN
+========================= */
+#projects {
+  margin-top: 4rem;
+}
+
+.campaign-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-item img {
+  height: 260px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border: 2px solid #000;
   background: #fff;
 }
 
-section[aria-label="Featured links"] h3 {
-  margin-top: 0;
+.gallery-item.wide img {
+  height: 360px;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 640px;
+}
+
+/* =========================
+   TOOLKITS
+========================= */
+#toolkits {
+  margin-top: 4rem;
+}
+
+.toolkit-item {
+  margin-bottom: 3rem;
+}
+
+.toolkit-title {
+  font-weight: 700;
+}
+
+/* Flyer archive */
+.archive-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.archive-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.archive-item img {
+  max-width: 360px;
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.archive-item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* =========================
+   BUTTON TOOLKIT
+========================= */
+.button-demo {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.button-demo button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+/* =========================
+   EXPANDABLE / SPOTLIGHT
+========================= */
+.expandable {
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expandable:hover {
+  transform: scale(1.03);
+}
+
+.expandable.spotlight {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 90vw;
+  max-height: 90vh;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  cursor: zoom-out;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.spotlight-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.spotlight-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* =========================
+   SOU JOANA–STYLE ARCHIVE
+========================= */
+.archive-block {
+  margin-top: 3rem;
+}
+
+.archive-intro {
+  max-width: 60ch;
+}
+
+.archive-hoard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.archive-asset {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-asset.narrow { grid-column: span 4; }
+.archive-asset.medium { grid-column: span 5; }
+.archive-asset.wide   { grid-column: span 7; }
+
+.archive-asset img {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.archive-asset figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  max-width: 42ch;
+}
+
+.project-note {
+  max-width: 60ch;
+  font-style: italic;
+  margin-top: 1rem;
 }
 
 /* =========================
@@ -215,75 +370,27 @@ footer {
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 720px) {
-
-  body {
-    font-size: 18px;
-  }
-
+@media (max-width: 800px) {
   #about {
     grid-template-columns: 1fr;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
   .resume-item {
     grid-template-columns: 1fr;
-    row-gap: 0.25rem;
   }
-}
-/* =========================
-   PROJECTS / CAMPAIGN (EDITORIAL, HORIZONTAL)
-========================= */
 
-#projects {
-  margin-top: 4rem;
-}
+  .experience-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Stack assets vertically */
-.campaign-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-top: 3rem;
-}
+  .archive-hoard {
+    grid-template-columns: 1fr;
+  }
 
-/* Each asset */
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .archive-asset {
+    grid-column: span 1;
+  }
 
-/* Horizontal image control */
-.gallery-item img {
-  height: 260px;              /* MAIN SIZE CONTROL */
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  border: 2px solid #000;
-  background: #fff;
-}
-
-/* Larger hero assets */
-.gallery-item.wide img {
-  height: 360px;
-}
-
-/* Caption */
-.gallery-item figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  text-align: center;
-  max-width: 640px;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
   .gallery-item img {
     height: 200px;
   }
@@ -292,342 +399,5 @@ footer {
     height: 260px;
   }
 }
-/* =========================
-   EXPERIENCE IMAGE STRIP (CV ONLY)
-========================= */
 
-.experience-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;               /* tighter spacing */
-  margin-top: 0.75rem;
-  max-width: 100%;           /* allow near full-width */
-}
-
-.experience-gallery figure {
-  margin: 0;
-}
-
-.experience-gallery img {
-  width: 100%;
-  height: 140px;             /* larger images */
-  object-fit: cover;
-  border-radius: 6px;        /* subtle softness, optional */
-  background: transparent;
-}
-
-/* Mobile: 2 × 2 grid */
-@media (max-width: 720px) {
-  .experience-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .experience-gallery img {
-    height: 160px;
-  }
-}
-
-/* =========================
-   EXPANDABLE IMAGE HOVER
-========================= */
-
-.expandable {
-  cursor: zoom-in;
-  transition: transform 0.2s ease;
-}
-
-.expandable:hover,
-.expandable:focus-visible {
-  transform: scale(1.03);
-}
-
-/* =========================
-   LIGHTBOX MODAL
-========================= */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  z-index: 1000;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.lightbox[aria-hidden="false"] {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-image {
-  max-width: 95vw;
-  max-height: 90vh;
-  object-fit: contain;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-.lightbox-close:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-}
-/* =========================
-   INLINE SPOTLIGHT IMAGE
-========================= */
-
-.expandable {
-  cursor: zoom-in;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  z-index: 1;
-}
-
-.expandable.spotlight {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%) scale(1);
-  z-index: 1001;
-  cursor: zoom-out;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-
-/* Dark backdrop */
-.spotlight-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.spotlight-backdrop.active {
-  opacity: 1;
-  pointer-events: all;
-}
-/* =========================
-   FULL CV LINK
-========================= */
-
-.full-cv-link {
-  margin-top: 1.5rem;
-  font-style: italic;
-}
-
-/* =========================
-   TOOLKITS
-========================= */
-
-#toolkits {
-  margin-top: 4rem;
-}
-
-.toolkit-item {
-  margin-bottom: 3rem;
-}
-
-.toolkit-content {
-  max-width: 960px;
-}
-
-.toolkit-title {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-/* Reuse experience gallery sizing */
-#toolkits .experience-gallery {
-  margin-top: 1rem;
-}
-
-/* =========================
-   BUTTON TOOLKIT
-========================= */
-
-.button-demo {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-  flex-wrap: wrap;
-}
-
-.button-demo button {
-  font-family: inherit;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #000;
-  background: #fff;
-  cursor: default;
-}
-
-/* Code block styling */
-.code-block {
-  background: #f4f4f4;
-  padding: 1rem;
-  font-size: 0.8rem;
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-/* =========================
-   TOOLKITS
-========================= */
-
-#toolkits {
-  margin-top: 4rem;
-}
-
-.toolkit-item {
-  margin-bottom: 3rem;
-}
-
-.toolkit-gallery {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.toolkit-gallery.two-up {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.toolkit-gallery img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-/* =========================
-   BUTTON GALLERY
-========================= */
-
-.button-gallery {
-  display: flex;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.button-gallery button {
-  font-family: inherit;
-  font-size: 0.9rem;
-  padding: 0.6rem 1.4rem;
-  border: 2px solid #000;
-  background: #fff;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button-gallery button:hover,
-.button-gallery button:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 0 #000;
-}
-
-/* Visual distinction */
-.btn-secondary {
-  background: #f4f4f4;
-}
-
-.btn-tertiary {
-  border-style: dashed;
-}
-
-/* =========================
-   LIGHTBOX (SPOTLIGHT STYLE)
-========================= */
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-.lightbox img {
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-
-/* =========================
-   TOOLKIT ARCHIVE (FLYERS)
-========================= */
-
-.toolkit-archive {
-  margin-top: 3rem;
-}
-
-.toolkit-header {
-  max-width: 60ch;
-}
-
-.toolkit-header h3 {
-  margin-bottom: 0.5rem;
-}
-
-/* Horizontal archive gallery */
-.archive-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* Individual flyer */
-.archive-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.archive-item img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  border: 2px solid #000;
-  background: #fff;
-}
-
-/* Caption */
-.archive-item figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.8rem;
-  text-align: center;
-  opacity: 0.85;
-}
-
-/* Mobile tightening */
-@media (max-width: 700px) {
-  .archive-gallery {
-    gap: 1.25rem;
-  }
-
-  .archive-item img {
-    max-width: 100%;
-  }
-}
 
