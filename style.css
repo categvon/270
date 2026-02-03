@@ -518,6 +518,59 @@ footer {
   }
 }
 
+/* ==================================================
+   CV EXPERIENCE GALLERY — ABSOLUTE ISOLATION FIX
+   (horizontal, uncropped, spotlight-safe)
+================================================== */
+
+#cv .experience-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+}
+
+/* Reset figure completely */
+#cv .experience-gallery figure {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* HARD RESET on CV images */
+#cv .experience-gallery img {
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+
+  object-fit: contain !important;
+  aspect-ratio: auto !important;
+
+  border-radius: 6px;
+  background: transparent;
+
+  /* kill ALL transforms / positioning */
+  transform: none !important;
+  position: static !important;
+  box-shadow: none !important;
+}
+
+/* Spotlight state — keep image natural */
+#cv .experience-gallery img.spotlight {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  #cv .experience-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 
 
