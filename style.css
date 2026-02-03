@@ -478,6 +478,51 @@ footer {
     height: 210px;
   }
 }
+/* =========================
+   CV EXPERIENCE GALLERY — RESET
+   (Program Coordinator only)
+========================= */
+
+/* Layout reset */
+.experience-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  position: relative;
+}
+
+/* Image reset */
+.experience-gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+
+  /* CRITICAL: undo campaign styles */
+  transform: none !important;
+  box-shadow: none !important;
+  position: static !important;
+}
+
+/* Disable overlap behavior */
+.experience-gallery figure {
+  margin: 0;
+}
+
+/* Mobile: 2 × 2 grid */
+@media (max-width: 720px) {
+  .experience-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience-gallery img {
+    height: 160px;
+  }
+}
+
 
 
 
