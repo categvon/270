@@ -573,3 +573,61 @@ footer {
 }
 
 
+/* =========================
+   TOOLKIT ARCHIVE (FLYERS)
+========================= */
+
+.toolkit-archive {
+  margin-top: 3rem;
+}
+
+.toolkit-header {
+  max-width: 60ch;
+}
+
+.toolkit-header h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal archive gallery */
+.archive-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual flyer */
+.archive-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.archive-item img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+/* Caption */
+.archive-item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* Mobile tightening */
+@media (max-width: 700px) {
+  .archive-gallery {
+    gap: 1.25rem;
+  }
+
+  .archive-item img {
+    max-width: 100%;
+  }
+}
+
