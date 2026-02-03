@@ -18,10 +18,13 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#cv">CV</a></li>
+        <li><a href="#toolkits">Toolkits</a></li>
         <li><a href="#projects">Projects</a></li>
       </ul>
     </nav>
   </header>
+
+  <main id="main">
 
   <!-- Main Content -->
   <main id="main">
@@ -123,43 +126,46 @@
 <!-- ======================
      TOOLKITS
      ====================== -->
-<section id="toolkits">
-  <h2>Toolkits</h2>
+    <section id="toolkits">
+      <h2>Toolkits</h2>
 
-  <!-- Toolkit: Screenreader-Friendly Flyers -->
-  <div class="toolkit-item">
+      <!-- Flyer Toolkit -->
+      <article class="toolkit-archive">
 
-    <div class="toolkit-content">
-      <div class="toolkit-title">Screen Reader–Friendly Flyers</div>
+        <header class="toolkit-header">
+          <h3>Screen Reader–Friendly Flyers</h3>
+          <p>
+            Accessible flyer templates designed for screen readers,
+            high-contrast viewing, and plain-language clarity.
+          </p>
+        </header>
 
-      <p>
-        A set of accessible flyer templates designed for screen reader users,
-        high-contrast viewing, and plain-language clarity.
-      </p>
+        <div class="archive-gallery" aria-label="Accessible flyer designs">
 
-      <p>
-        <a href="#" target="_blank" rel="noopener">
-          Access the free Canva template
-        </a>
-      </p>
+          <figure class="archive-item">
+            <img
+              src="toolkitsimages/brightflyer.png"
+              alt="Bright accessible event flyer with high contrast text"
+              class="expandable">
+            <figcaption>Bright version</figcaption>
+          </figure>
 
-      <div class="experience-gallery" aria-label="Accessible flyer templates">
-        <figure>
-          <img src="toolkits/flyer1.png" alt="Accessible flyer template with high contrast text" class="expandable">
-        </figure>
-        <figure>
-          <img src="toolkits/flyer2.png" alt="Screen reader optimized flyer layout example" class="expandable">
-        </figure>
-        <figure>
-          <img src="toolkits/flyer3.png" alt="Plain language accessible flyer example" class="expandable">
-        </figure>
-        <figure>
-          <img src="toolkits/flyer4.png" alt="Accessible event flyer with structured headings" class="expandable">
-        </figure>
-      </div>
-    </div>
+          <figure class="archive-item">
+            <img
+              src="toolkitsimages/darkflyer.png"
+              alt="Dark mode accessible flyer optimized for screen readers"
+              class="expandable">
+            <figcaption>Dark version</figcaption>
+          </figure>
 
-  </div>
+          <!-- Add later
+          <figure class="archive-item">
+            <img src="toolkitsimages/flyer3.png" alt="Third flyer variation">
+            <figcaption>Alternate layout</figcaption>
+          </figure>
+          -->
+
+        </div>
 
   <!-- Toolkit: Buttons -->
   <div class="toolkit-item">
@@ -239,7 +245,6 @@
     <p>© 2026 Cate G.</p>
   </footer>
 
-  <!-- Spotlight Backdrop -->
   <div class="spotlight-backdrop"></div>
 
   <!-- Spotlight Script -->
@@ -269,7 +274,6 @@
     }
 
     backdrop.addEventListener('click', closeSpotlight);
-
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeSpotlight();
     });
@@ -277,7 +281,6 @@
 
 </body>
 </html>
-
 
 
 
