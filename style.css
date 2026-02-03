@@ -284,39 +284,13 @@ footer {
   margin: 0;
 }
 
-/* =========================
-   CV IMAGE GALLERY — FINAL FIX
-========================= */
-
-.experience-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.experience-gallery figure {
-  margin: 0;
-}
-
-/* LET IMAGES BE IMAGES */
 .experience-gallery img {
   width: 100%;
-  height: auto;              /* ← CRITICAL */
-  max-height: none;
-  object-fit: initial;       /* ← no forced fitting */
-  display: block;
-  border-radius: 6px;
+  height: 140px;
+  object-fit: contain;
   background: transparent;
+  border-radius: 6px;
 }
-
-/* Mobile */
-@media (max-width: 720px) {
-  .experience-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 
 /* =========================
    EXPANDABLE IMAGES
@@ -378,6 +352,7 @@ footer {
   width: 100%;
   border: 2px solid #000;
 }
+
 
 
 
