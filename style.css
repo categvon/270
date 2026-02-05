@@ -411,17 +411,24 @@ footer {
   }
 }
 /* =========================
-   COLLAGE GALLERY
+   COLLAGE GALLERY (STATIC SPOTLIGHT)
 ========================= */
 .collage-gallery {
   position: relative;
-  height: 460px;
   margin-top: 3rem;
+}
+
+.beehive-collage {
+  height: 520px;
+}
+
+.toolkits-collage {
+  height: 320px;
 }
 
 .collage-item {
   position: absolute;
-  width: 260px;
+  width: 220px;
 }
 
 .collage-item img {
@@ -430,47 +437,66 @@ footer {
   background: #fff;
   border: 2px solid #000;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
-  transition: transform 0.25s ease, z-index 0.2s ease;
+  cursor: zoom-in;
 }
 
-.collage-item:hover {
-  z-index: 10;
+/* disable motion entirely for spotlight */
+.collage-item img:hover,
+.collage-item img.spotlight {
+  transform: none !important;
 }
 
-.collage-item:hover img {
-  transform: scale(1.05);
-}
-
-/* individual positioning */
-.collage-item.item-1 {
+/* -------------------------
+   BEEHIVE POSITIONS (5)
+------------------------- */
+.beehive-collage .item-1 {
   top: 0;
-  left: 8%;
+  left: 6%;
   transform: rotate(-6deg);
-  z-index: 1;
 }
 
-.collage-item.item-2 {
+.beehive-collage .item-2 {
   top: 70px;
-  left: 38%;
+  left: 34%;
   transform: rotate(4deg);
-  z-index: 2;
 }
 
-.collage-item.item-3 {
+.beehive-collage .item-3 {
   top: 160px;
-  left: 18%;
+  left: 12%;
   transform: rotate(-2deg);
-  z-index: 3;
 }
 
-.collage-item.item-4 {
-  top: 220px;
-  left: 52%;
-  transform: rotate(6deg);
-  z-index: 2;
+.beehive-collage .item-4 {
+  top: 200px;
+  left: 44%;
+  transform: rotate(5deg);
 }
 
-/* mobile fallback */
+.beehive-collage .item-5 {
+  top: 320px;
+  left: 24%;
+  transform: rotate(-4deg);
+}
+
+/* -------------------------
+   TOOLKITS POSITIONS (2)
+------------------------- */
+.toolkits-collage .item-1 {
+  top: 0;
+  left: 12%;
+  transform: rotate(-4deg);
+}
+
+.toolkits-collage .item-2 {
+  top: 90px;
+  left: 38%;
+  transform: rotate(3deg);
+}
+
+/* -------------------------
+   MOBILE FALLBACK
+------------------------- */
 @media (max-width: 700px) {
   .collage-gallery {
     height: auto;
@@ -483,14 +509,3 @@ footer {
     transform: none !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
