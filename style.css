@@ -133,20 +133,23 @@ main {
 }
 
 /* =========================
-   CV IMAGE STRIP — FULL IMAGE, NO CROP (FOR REAL)
+   CV IMAGE STRIP — LARGE, TIGHT, NO CROP
 ========================= */
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 0.4rem;               /* tighter spacing */
   margin-top: 1.25rem;
+
+  max-width: 1200px;        /* wider than text */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .experience-gallery img {
   width: 100%;
-  height: auto !important;     /* HARD reset */
-  max-height: none !important; /* HARD reset */
-  object-fit: contain !important;
+  height: auto;             /* remove fixed height */
+  object-fit: contain;      /* show full image */
   display: block;
 }
 
@@ -319,6 +322,7 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
 
 
 
