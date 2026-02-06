@@ -133,19 +133,20 @@ main {
 }
 
 /* =========================
-   CV IMAGE STRIP (ENLARGED — SAFE)
+   CV IMAGE STRIP (FIXED)
 ========================= */
 .experience-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* was 4 */
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
 .experience-gallery img {
   width: 100%;
-  height: 360px; /* larger, but controlled */
-  object-fit: contain;
+  height: 100%;
+  aspect-ratio: 3 / 4;   /* adjust if needed */
+  object-fit: cover;    /* THIS is the key */
 }
 
 /* =========================
@@ -317,5 +318,6 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
 
 
