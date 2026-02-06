@@ -509,3 +509,73 @@ footer {
     transform: none !important;
   }
 }
+
+/* =========================
+   COLLAGE OVERRIDES — FINAL
+========================= */
+
+/* remove frames entirely */
+.collage-item img {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ---------------------------------
+   COLLAGE SIZING
+---------------------------------- */
+
+/* default collage size (flyers doubled) */
+.toolkits-collage .collage-item {
+  width: 440px;
+}
+
+/* beehive: items 1–4 are 2× size */
+.beehive-collage .item-1,
+.beehive-collage .item-2,
+.beehive-collage .item-3,
+.beehive-collage .item-4 {
+  width: 440px;
+}
+
+/* item 5 stays smaller for balance */
+.beehive-collage .item-5 {
+  width: 220px;
+}
+
+/* ---------------------------------
+   SPOTLIGHT — COLLAGE SAFE MODE
+---------------------------------- */
+
+/* when a collage image is spotlighted,
+   remove ALL transforms and positioning influence */
+.collage-item img.spotlight {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  max-width: 90vw;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  z-index: 1001;
+  cursor: zoom-out;
+}
+
+/* ensure parent transforms do NOT interfere */
+.collage-item {
+  transform: none;
+}
+
+/* ---------------------------------
+   MOBILE SAFETY
+---------------------------------- */
+@media (max-width: 700px) {
+  .collage-item img.spotlight {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+}
