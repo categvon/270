@@ -138,18 +138,18 @@ main {
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.4rem;               /* tighter spacing */
+  gap: 0.4rem;
   margin-top: 1.25rem;
 
-  max-width: 1200px;        /* wider than text */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .experience-gallery img {
   width: 100%;
-  height: auto;             /* remove fixed height */
-  object-fit: contain;      /* show full image */
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -295,7 +295,7 @@ img.spotlight {
 }
 
 .toolkits-collage .item-2 {
-  top: 40px; /* moved up */
+  top: 40px;
   left: 44%;
   transform: rotate(3deg);
 }
@@ -321,7 +321,42 @@ img.spotlight {
     transform: none !important;
     margin-bottom: 1.5rem;
   }
+
+  /* ABOUT: stack text first, image second */
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  #about > div {
+    order: 1;
+  }
+
+  #about figure {
+    order: 2;
+    margin-top: 1.5rem;
+  }
+
+  /* HEADER: full-width feel on mobile */
+  header {
+    width: 100%;
+  }
+
+  nav ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* RESUME: add breathing room on mobile */
+  .resume-item {
+    column-gap: 1rem;
+  }
+
+  .resume-item > div {
+    padding-right: 0.5rem;
+  }
 }
+
+
 
 
 
