@@ -133,20 +133,20 @@ main {
 }
 
 /* =========================
-   CV IMAGE STRIP — FULL IMAGE, NO CROP
+   CV IMAGE STRIP — FULL IMAGE, NO CROP (FOR REAL)
 ========================= */
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin-top: 1.25rem;
-  align-items: start;
 }
 
 .experience-gallery img {
   width: 100%;
-  height: auto;          /* key */
-  object-fit: contain;   /* key */
+  height: auto !important;     /* HARD reset */
+  max-height: none !important; /* HARD reset */
+  object-fit: contain !important;
   display: block;
 }
 
@@ -319,6 +319,7 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
 
 
 
