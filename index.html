@@ -185,14 +185,18 @@
 <script>
   const backdrop = document.querySelector('.spotlight-backdrop');
   let activeImage = null;
+  let originalParent = null;
+  let originalNextSibling = null;
 
   document.querySelectorAll('.expandable').forEach(img => {
     img.addEventListener('click', () => {
-      if (img.classList.contains('spotlight')) {
-        closeSpotlight();
-        return;
-      }
+      if (activeImage) return;
+
       activeImage = img;
+      originalParent = img.parentNode;
+      originalNextSibling = img.nextSibling;
+
+      document.body.appendChild(img);
       img.classList.add('spotlight');
       backdrop.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -201,13 +205,23 @@
 
   function closeSpotlight() {
     if (!activeImage) return;
-    activeImage.classList.remove('spotlight');
+
+    img = activeImage;
+    img.classList.remove('spotlight');
+
+    if (originalNextSibling) {
+      originalParent.insertBefore(img, originalNextSibling);
+    } else {
+      originalParent.appendChild(img);
+    }
+
     backdrop.classList.remove('active');
     document.body.style.overflow = '';
     activeImage = null;
   }
 
   backdrop.addEventListener('click', closeSpotlight);
+
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeSpotlight();
   });
@@ -215,6 +229,8 @@
 
 </body>
 </html>
+
+
 
 
 
