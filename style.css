@@ -189,6 +189,16 @@ img.spotlight {
 }
 
 /* =========================
+   TOOLKITS BACKGROUND FIX
+========================= */
+#toolkits,
+.archive-block,
+.archive-intro {
+  background: transparent;
+  border: none;
+}
+
+/* =========================
    COLLAGE GALLERIES
 ========================= */
 .collage-gallery {
@@ -280,7 +290,7 @@ img.spotlight {
 }
 
 .toolkits-collage .item-2 {
-  top: 120px;
+  top: 40px; /* moved up */
   left: 44%;
   transform: rotate(3deg);
 }
@@ -307,6 +317,7 @@ img.spotlight {
     margin-bottom: 1.5rem;
   }
 }
+
 
 
 
