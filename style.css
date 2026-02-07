@@ -280,9 +280,10 @@ img.spotlight {
 }
 
 .beehive-collage .item-5 {
-  top: 360px;        /* slightly higher */
-  left: 68%;         /* move to the right side */
-  transform: rotate(6deg);  /* tilt the opposite direction */
+  top: 40px;          /* raise it near item-1 height */
+  left: 68%;          /* keep it on the right side */
+  transform: rotate(6deg);  /* opposite tilt */
+  z-index: 0;         /* send behind other collage items */
 }
 
 /* =========================
@@ -367,6 +368,7 @@ img.spotlight {
     padding-right: 0.5rem;
   }
 }
+
 
 
 
