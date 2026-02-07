@@ -97,7 +97,7 @@ footer {
 
 footer nav ul {
   display: flex;
-  justify-content: center;
+  gap: 1.5rem;
   list-style: none;
   padding: 1rem 1.5rem;
   margin: 0;
@@ -400,6 +400,7 @@ img.spotlight {
   grid-template-columns: repeat(2, 1fr);
 }
 }
+
 
 
 
