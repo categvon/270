@@ -400,7 +400,106 @@ img.spotlight {
   grid-template-columns: repeat(2, 1fr);
 }
 }
+/* =========================
+   ACCESSIBLE BUTTON GALLERY
+========================= */
 
+.accessible-button-gallery {
+  margin: 2rem 0 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Base gallery button style */
+.gallery-btn {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 18px 42px;              /* larger click area */
+  border: none;
+  cursor: pointer;
+  transition:
+    border-radius 0.4s ease,
+    transform 0.4s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Strong keyboard focus */
+.gallery-btn:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+/* ------------------ */
+/* RED RECTANGLE */
+/* ------------------ */
+.btn-rect {
+  background-color: #ff4d2e;
+  border-radius: 6px;
+  color: #000;
+}
+
+.btn-rect:hover {
+  border-radius: 40px;
+  transform: skewX(-8deg);
+}
+
+/* ------------------ */
+/* GREEN PILL */
+/* ------------------ */
+.btn-pill {
+  background-color: #41d66e;
+  border-radius: 999px;
+  color: #000;
+}
+
+.btn-pill:hover {
+  border-radius: 8px;
+  transform: skewX(8deg);
+}
+
+/* ------------------ */
+/* BLUE SQUARE */
+/* ------------------ */
+.btn-square {
+  background-color: #b9d7ff;
+  border-radius: 4px;
+  color: #000;
+}
+
+.btn-square:hover {
+  border-radius: 50%;
+  transform: rotate(-6deg);
+}
+
+/* ------------------ */
+/* WEEBLY STYLE BUTTON */
+/* ------------------ */
+.btn-weebly {
+  background-color: #f4f7f8;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0px rgba(38, 96, 164, 1);
+}
+
+.btn-weebly:hover {
+  background-color: #F9DD73;
+  box-shadow: 8px 8px 0px rgba(97, 49, 3, 1);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   MOBILE STACKING
+========================= */
+@media (max-width: 700px) {
+  .accessible-button-gallery {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 
 
