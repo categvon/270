@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* =========================
-   RESET
-========================= */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -20,9 +18,7 @@ ul {
   padding-left: 1.2rem;
 }
 
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* Global */
 body {
   background: #ffffe6;
   color: #000;
@@ -57,7 +53,7 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
-  margin-top: 0.5rem;   
+  margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -66,9 +62,7 @@ p {
   margin-bottom: 1rem;
 }
 
-/* =========================
-   HEADER + NAV
-========================= */
+/* Header */
 header {
   background: #fff;
   border-bottom: 3px solid #8FB8ED;
@@ -86,13 +80,12 @@ nav a {
   letter-spacing: 0.04em;
   color: #000;
 }
-/* =========================
-   FOOTER
-========================= */
+
+/* Footer */
 footer {
   background: #fff;
   border-top: 3px solid #8FB8ED;
-   width: 100%;
+  width: 100%;
 }
 
 footer nav ul {
@@ -114,18 +107,14 @@ footer nav a:focus-visible {
   outline-offset: 4px;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* Layout */
 main {
   max-width: 960px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
 }
 
-/* =========================
-   INTRO / ABOUT
-========================= */
+/* About */
 #about {
   display: grid;
   grid-template-columns: 1fr 260px;
@@ -137,9 +126,7 @@ main {
   height: auto;
 }
 
-/* =========================
-   RESUME GRID
-========================= */
+/* Resume */
 .resume {
   display: grid;
   row-gap: 1.25rem;
@@ -159,13 +146,11 @@ main {
   font-weight: 700;
 }
 
-/* =========================
-   CV IMAGE STRIP — CLEAN GRID
-========================= */
+/* CV Gallery */
 .experience-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;              /* clean spacing */
+  gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
@@ -175,33 +160,26 @@ main {
 
 .experience-gallery img {
   width: 100%;
-  height: auto;              /* allow full natural height */
-  object-fit: contain;       /* ensure no cropping */
+  height: auto;
+  object-fit: contain;
   border-radius: 12px;
   display: block;
 }
 
-/* =========================
-   EXPANDABLE BASE
-========================= */
+/* Spotlight */
 .expandable {
   cursor: zoom-in;
 }
 
-/* =========================
-   SPOTLIGHT (FIXED + SAFE)
-========================= */
 img.spotlight {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-
   max-width: 90vw;
   max-height: 90vh;
   width: auto;
   height: auto;
-
   z-index: 2000;
   cursor: zoom-out;
 }
@@ -221,25 +199,12 @@ img.spotlight {
   pointer-events: all;
 }
 
-/* =========================
-   TOOLKITS BACKGROUND FIX
-========================= */
-#toolkits,
-.archive-block,
-.archive-intro {
-  background: transparent;
-  border: none;
-}
-
-/* =========================
-   COLLAGE GALLERIES
-========================= */
+/* Collage */
 .collage-gallery {
   position: relative;
   margin-top: 3rem;
 }
 
-/* prevent section spillover */
 .beehive-collage {
   height: 620px;
 }
@@ -248,12 +213,10 @@ img.spotlight {
   height: 360px;
 }
 
-/* collage items */
 .collage-item {
   position: absolute;
 }
 
-/* collage images — NO FRAMES */
 .collage-item img {
   width: 100%;
   height: auto;
@@ -262,9 +225,7 @@ img.spotlight {
   box-shadow: none;
 }
 
-/* =========================
-   COLLAGE SIZING
-========================= */
+/* Collage Sizes */
 .beehive-collage .item-1,
 .beehive-collage .item-2,
 .beehive-collage .item-3,
@@ -280,130 +241,22 @@ img.spotlight {
   width: 320px;
 }
 
-/* =========================
-   COLLAGE POSITIONS — BEEHIVE
-========================= */
-.beehive-collage .item-1 {
-  top: 0;
-  left: 6%;
-  transform: rotate(-6deg);
-}
+/* Collage Positions */
+.beehive-collage .item-1 { top: 0; left: 6%; transform: rotate(-6deg); }
+.beehive-collage .item-2 { top: 80px; left: 36%; transform: rotate(4deg); }
+.beehive-collage .item-3 { top: 190px; left: 10%; transform: rotate(-2deg); }
+.beehive-collage .item-4 { top: 230px; left: 46%; transform: rotate(5deg); }
+.beehive-collage .item-5 { top: 40px; left: 68%; transform: rotate(6deg); z-index: 0; }
 
-.beehive-collage .item-2 {
-  top: 80px;
-  left: 36%;
-  transform: rotate(4deg);
-}
+.toolkits-collage .item-1 { top: 0; left: 12%; transform: rotate(-4deg); }
+.toolkits-collage .item-2 { top: 40px; left: 44%; transform: rotate(3deg); }
 
-.beehive-collage .item-3 {
-  top: 190px;
-  left: 10%;
-  transform: rotate(-2deg);
-}
-
-.beehive-collage .item-4 {
-  top: 230px;
-  left: 46%;
-  transform: rotate(5deg);
-}
-
-.beehive-collage .item-5 {
-  top: 40px;          /* raise it near item-1 height */
-  left: 68%;          /* keep it on the right side */
-  transform: rotate(6deg);  /* opposite tilt */
-  z-index: 0;         /* send behind other collage items */
-}
-
-/* =========================
-   COLLAGE POSITIONS — TOOLKITS
-========================= */
-.toolkits-collage .item-1 {
-  top: 0;
-  left: 12%;
-  transform: rotate(-4deg);
-}
-
-.toolkits-collage .item-2 {
-  top: 40px;
-  left: 44%;
-  transform: rotate(3deg);
-}
-
-/* =========================
-   PROJECTS SPACING FIX
-========================= */
+/* Projects spacing */
 #projects {
   margin-top: 10rem;
 }
 
-/* =========================
-   MOBILE FALLBACK
-========================= */
-@media (max-width: 700px) {
-
-  /* REAL FIX: prevent layout overflow and zoomed-in default */
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  header {
-    width: 100%;
-  }
-
-  .collage-gallery {
-    height: auto;
-  }
-
-  .collage-item {
-    position: static;
-    width: 100%;
-    transform: none !important;
-    margin-bottom: 1.5rem;
-  }
-
-  /* ABOUT: stack text first, image second */
-  #about {
-    grid-template-columns: 1fr;
-  }
-
-  #about > div {
-    order: 1;
-  }
-
-  #about figure {
-    order: 2;
-    margin-top: 1.5rem;
-  }
-
-  /* HEADER: full-width feel on mobile */
-  nav ul {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* RESUME: add breathing room on mobile */
-  .resume-item {
-    column-gap: 1rem;
-  }
-
-  .resume-item > div {
-    padding-right: 0.5rem;
-  }
-   /* CV gallery mobile layout: 2 x 2 */
-.experience-gallery {
-  grid-template-columns: repeat(2, 1fr);
-}
-}
-/* =========================
-   ACCESSIBLE BUTTON GALLERY
-========================= */
-
+/* Accessible Button Gallery */
 .accessible-button-gallery {
   margin: 2rem 0 3rem 0;
   display: flex;
@@ -411,12 +264,11 @@ img.spotlight {
   gap: 1.5rem;
 }
 
-/* Base gallery button style */
 .gallery-btn {
   font-family: 'Atkinson Hyperlegible', sans-serif;
   font-size: 15px;
   font-weight: 700;
-  padding: 18px 42px;              /* larger click area */
+  padding: 18px 42px;
   border: none;
   cursor: pointer;
   transition:
@@ -426,15 +278,11 @@ img.spotlight {
     box-shadow 0.3s ease;
 }
 
-/* Strong keyboard focus */
 .gallery-btn:focus-visible {
   outline: 3px solid #000;
   outline-offset: 4px;
 }
 
-/* ------------------ */
-/* RED RECTANGLE */
-/* ------------------ */
 .btn-rect {
   background-color: #ff4d2e;
   border-radius: 6px;
@@ -446,9 +294,6 @@ img.spotlight {
   transform: skewX(-8deg);
 }
 
-/* ------------------ */
-/* GREEN PILL */
-/* ------------------ */
 .btn-pill {
   background-color: #41d66e;
   border-radius: 999px;
@@ -460,9 +305,6 @@ img.spotlight {
   transform: skewX(8deg);
 }
 
-/* ------------------ */
-/* BLUE SQUARE */
-/* ------------------ */
 .btn-square {
   background-color: #b9d7ff;
   border-radius: 4px;
@@ -474,9 +316,6 @@ img.spotlight {
   transform: rotate(-6deg);
 }
 
-/* ------------------ */
-/* WEEBLY STYLE BUTTON */
-/* ------------------ */
 .btn-weebly {
   background-color: #f4f7f8;
   color: #000;
@@ -491,21 +330,79 @@ img.spotlight {
   transform: translateY(-4px);
 }
 
-/* =========================
-   MOBILE STACKING
-========================= */
-@media (max-width: 700px) {
-  .accessible-button-gallery {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Button Code Section */
+.button-code {
+  margin-top: 3rem;
+  max-width: 720px;
 }
+
+.button-code details {
+  margin-bottom: 1rem;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.button-code summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button-code pre {
+  margin-top: 0.75rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Scroll */
 html {
   scroll-behavior: smooth;
 }
 
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 140px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #about {
+    grid-template-columns: 1fr;
+  }
+
+  .collage-gallery {
+    height: auto;
+  }
+
+  .collage-item {
+    position: static;
+    width: 100%;
+    transform: none !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .accessible-button-gallery {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
