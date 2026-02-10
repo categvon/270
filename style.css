@@ -410,6 +410,51 @@ section {
   border: none !important;
   box-shadow: none !important;
 }
+/* Code Spotlight */
+.code-spotlight {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 2500;
+  padding: 2rem;
+}
+
+.code-spotlight.active {
+  display: flex;
+}
+
+.code-spotlight-inner {
+  background: #ffffe6;
+  max-width: 800px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.code-spotlight pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.code-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 
