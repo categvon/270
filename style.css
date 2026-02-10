@@ -404,6 +404,12 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+#toolkits .archive-block,
+#toolkits .archive-intro {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 
 
 
