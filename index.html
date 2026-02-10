@@ -171,7 +171,104 @@
 
 <section id="projects">
   <h1>My Projects</h1>
-  <h2>Industry Ma
+  <h2>Industry Marketing Campaign</h2>
+
+  <p class="project-note">
+    Designed brand assets for website, social media, and slide decks, highlighting Beehive Camping's wheelchair accessible tent & producing a combined social media following of over 257,000 users in under two years.
+  </p>
+
+  <div class="collage-gallery beehive-collage">
+
+    <figure class="collage-item item-1">
+      <img src="images/pitchdeck.png" alt="Pitch deck concept" class="expandable">
+    </figure>
+
+    <figure class="collage-item item-2">
+      <img src="images/website.png" alt="Campaign website" class="expandable">
+    </figure>
+
+    <figure class="collage-item item-3">
+      <img src="images/postcard600f.png" alt="Postcard front" class="expandable">
+    </figure>
+
+    <figure class="collage-item item-4">
+      <img src="images/postcard600.png" alt="Postcard back" class="expandable">
+    </figure>
+
+    <figure class="collage-item item-5">
+      <img src="images/banner.png" alt="Convention banner" class="expandable">
+    </figure>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h1>Contact Me</h1>
+  <p>Email: gvon [at] ucla.edu</p>
+</section>
+
+</main>
+
+<footer>
+  <nav aria-label="Footer navigation">
+    <ul>
+      <li>
+        <a href="#top">Return to top</a>
+      </li>
+    </ul>
+  </nav>
+</footer>
+
+<div class="spotlight-backdrop"></div>
+
+<script>
+  const backdrop = document.querySelector('.spotlight-backdrop');
+  let activeImage = null;
+  let originalParent = null;
+  let originalNextSibling = null;
+
+  document.querySelectorAll('.expandable').forEach(img => {
+    img.addEventListener('click', () => {
+      if (activeImage) return;
+
+      activeImage = img;
+      originalParent = img.parentNode;
+      originalNextSibling = img.nextSibling;
+
+      document.body.appendChild(img);
+      img.classList.add('spotlight');
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeSpotlight() {
+    if (!activeImage) return;
+
+    const img = activeImage;
+    img.classList.remove('spotlight');
+
+    if (originalNextSibling) {
+      originalParent.insertBefore(img, originalNextSibling);
+    } else {
+      originalParent.appendChild(img);
+    }
+
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    activeImage = null;
+  }
+
+  backdrop.addEventListener('click', closeSpotlight);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeSpotlight();
+  });
+</script>
+
+</body>
+</html>
+
 
 
 
